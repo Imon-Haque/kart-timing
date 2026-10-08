@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:karttiming;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+app:
+  jwt:
+    secret: test-secret-key-that-is-long-enough-for-hs256
+    expiration-ms: 3600000
+  users:
+    - username: admin
+      password: $2a$10$cdKKYwW06.57iDHsLs5B/e.dKs0kgDiwW4LXn.1HSGABJMdKsxloi
+      role: ADMIN
